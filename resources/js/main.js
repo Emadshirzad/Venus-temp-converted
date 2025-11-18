@@ -142,15 +142,31 @@ window.addEventListener("click", (e) => {
 
 var swiper = new Swiper(".myPortfolioSwiper", {
     slidesPerView: 5,
-    spaceBetween: 20,
+    spaceBetween: 0,   // Desktop default
     loop: true,
     autoplay: { delay: 4000 },
     speed: 600,
+
     breakpoints: {
-        1320: { slidesPerView: 4 },
-        1024: { slidesPerView: 4 },
-        992: { slidesPerView: 3 },
-        600: { slidesPerView: 2 },
-        480: { slidesPerView: 1 },
+        1320: {
+            slidesPerView: 4,
+            spaceBetween: 0
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 0
+        },
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 0
+        },
+        600: {
+            slidesPerView: 2,
+            spaceBetween: 50   // Mobile spacing here
+        },
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 50   // Mobile spacing here
+        }
     }
 });

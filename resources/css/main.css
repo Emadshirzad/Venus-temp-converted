@@ -1996,9 +1996,7 @@ footer {
 .swiper {
   padding-bottom: 40px;
 }
-.swiper-wrapper {
-  justify-content: center;
-}
+
 .swiper-slide {
   transition: all 0.3s ease-in-out;
 }

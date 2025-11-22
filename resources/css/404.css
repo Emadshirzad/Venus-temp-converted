@@ -1,0 +1,131 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f9fc;
+  --text-primary: #1e293b;
+  --text-tertiary: #666666;
+  --primary-blue: #2563eb;
+}
+body.dark-mode {
+  --bg-primary: #000f30;
+  --bg-secondary: #081738;
+  --text-primary: #ffffff;
+  --text-tertiary: #9ca3af;
+}
+/* ==========================
+   SECTION WRAPPER
+   ========================== */
+
+.notfound-section {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .notfound-section {
+  background: var(--bg-secondary);
+}
+
+/* ==========================
+   GRID WRAPPER
+   ========================== */
+
+.notfound-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .notfound-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* ==========================
+   LEFT IMAGE
+   ========================== */
+
+.notfound-image {
+  width: 50%;
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .notfound-image {
+    width: 80%;
+  }
+}
+
+.image-box {
+  width: 100%;
+  aspect-ratio: 129 / 138;
+  text-align: center;
+  margin: auto;
+}
+
+.image-full {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================
+   RIGHT TEXT CONTENT
+   ========================== */
+
+.notfound-content {
+  width: 50%;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .notfound-content {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+.notfound-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+body.dark-mode .notfound-title {
+  color: white;
+}
+
+.notfound-text {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* ==========================
+   BUTTON
+   ========================== */
+
+.notfound-btn {
+  background: var(--primary-blue);
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  color: white;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition-base);
+}
+
+.notfound-btn:hover {
+  background: var(--primary-blue-hover);
+}
+
+/* ==========================
+   SVG Holder
+   ========================== */
+
+.notfound-icon {
+  margin-bottom: 2rem;
+}

@@ -84,10 +84,16 @@ const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 
 navLinks.forEach(link => {
     const href = link.getAttribute('href');
+    console.log(currentPath);
+
     if (href === currentPath ||
-        (currentPath.startsWith('/blog') && href === '/blog') ||
-        (currentPath.startsWith('/portfolio') && href === '/portfolio')) {
-        link.classList.add('active');
+        (currentPath.includes('/index.html') && href === '/') ||
+        (currentPath.includes('/about') && href === '/about.html') ||
+        (currentPath.includes('/services') && href === '/services.html') ||
+        (currentPath.includes('/portfolio') && href === '/portfolio.html')) {
+        (currentPath.includes('/blog') && href === '/blog.html') ||
+            (currentPath.includes('/contact') && href === '/contact.html') ||
+            link.classList.add('active');
     } else {
         link.classList.remove('active');
     }
@@ -205,3 +211,4 @@ var swiper = new Swiper(".myPortfolioSwiper", {
         }
     }
 });
+

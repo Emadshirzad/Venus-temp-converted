@@ -159,6 +159,7 @@ header.sticky {
 .nav-link:hover,
 .nav-link.active {
   color: var(--primary-blue);
+  font-weight: bold;
 }
 
 /* Submenu */
@@ -188,7 +189,6 @@ header.sticky {
   visibility: visible;
   transform: translateY(0);
 }
-
 .submenu a {
   display: block;
   padding: var(--spacing-xs) var(--spacing-sm);
@@ -346,7 +346,7 @@ body.dark-mode .moon-icon {
 .mobile-menu-close svg {
   width: 24px;
   height: 24px;
-  stroke: var(--text-primary);
+  color: var(--text-primary);
 }
 
 .mobile-nav {

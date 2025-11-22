@@ -141,32 +141,76 @@ window.addEventListener("click", (e) => {
 // carousel of swiper
 
 var swiper = new Swiper(".myPortfolioSwiper", {
-    slidesPerView: 10,
-    spaceBetween: 0,
+    slidesPerView: 1,
+    spaceBetween: 20,
     loop: true,
-    autoplay: { delay: 4000 },
+    grabCursor: true,
+    centeredSlides: false,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+    },
     speed: 600,
-
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
     breakpoints: {
-        1320: {
-            slidesPerView: 5,
-            spaceBetween: -380
+        // Mobile phones (320px and up)
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 15
         },
-        1024: {
-            slidesPerView: 4,
-            spaceBetween: 160
+        // Small mobile (400px and up)
+        400: {
+            slidesPerView: 1,
+            spaceBetween: 20
         },
-        992: {
-            slidesPerView: 3,
-            spaceBetween: 0
+        // Large mobile (480px and up)
+        480: {
+            slidesPerView: 1.5,
+            spaceBetween: 20
         },
+        // Small tablets (600px and up)
         600: {
             slidesPerView: 2,
-            spaceBetween: 0
+            spaceBetween: 20
         },
-        480: {
-            slidesPerView: 1,
-            spaceBetween: -100
+        // Tablets (768px and up)
+        768: {
+            slidesPerView: 2.5,
+            spaceBetween: 25
+        },
+        // Large tablets (992px and up)
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        },
+        // Desktop (1024px and up)
+        1024: {
+            slidesPerView: 3.5,
+            spaceBetween: 30
+        },
+        // Large desktop (1200px and up)
+        1200: {
+            slidesPerView: 4,
+            spaceBetween: 35
+        },
+        // Extra large desktop (1320px and up)
+        1320: {
+            slidesPerView: 4.5,
+            spaceBetween: 40
+        },
+        // Ultra wide (1440px and up)
+        1440: {
+            slidesPerView: 5,
+            spaceBetween: 40
         }
     }
 });

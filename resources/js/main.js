@@ -166,32 +166,32 @@ var swiper = new Swiper(".myPortfolioSwiper", {
         // Mobile phones (320px and up)
         320: {
             slidesPerView: 1,
-            spaceBetween: 0
+            spaceBetween: 10
         },
         // Small mobile (400px and up)
         400: {
             slidesPerView: 1,
-            spaceBetween: 20
+            spaceBetween: 10
         },
         // Large mobile (480px and up)
         480: {
             slidesPerView: 1.5,
-            spaceBetween: 20
+            spaceBetween: 10
         },
         // Small tablets (600px and up)
         600: {
             slidesPerView: 2,
-            spaceBetween: 20
+            spaceBetween: 10
         },
         // Tablets (768px and up)
         768: {
             slidesPerView: 2.5,
-            spaceBetween: 25
+            spaceBetween: 0
         },
         // Large tablets (992px and up)
         992: {
             slidesPerView: 3,
-            spaceBetween: 30
+            spaceBetween: 10
         },
         // Desktop (1024px and up)
         1024: {
@@ -206,12 +206,12 @@ var swiper = new Swiper(".myPortfolioSwiper", {
         // Extra large desktop (1320px and up)
         1320: {
             slidesPerView: 4.5,
-            spaceBetween: 40
+            spaceBetween: 20
         },
         // Ultra wide (1440px and up)
         1440: {
             slidesPerView: 5,
-            spaceBetween: -10
+            spaceBetween: 30
         }
     }
 });

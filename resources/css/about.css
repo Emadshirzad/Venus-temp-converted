@@ -70,7 +70,12 @@ body.dark-mode {
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 1rem;
+}
+@media screen and (min-width: 250px) {
+  .portfolio-container {
+    gap: 2rem;
+  }
 }
 
 .portfolio-item {

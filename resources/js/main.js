@@ -5,11 +5,10 @@ const body = document.body;
 const header = document.getElementById('header');
 const logoImg = document.querySelectorAll('.logo');
 // Check for saved theme preference or default to 'light'
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
+if (document.documentElement.classList.contains('dark-mode')) {
     body.classList.add('dark-mode');
+    document.documentElement.classList.remove('dark-mode');
 }
-
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
 
@@ -84,8 +83,6 @@ const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 
 navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    console.log(currentPath);
-
     if (href === currentPath ||
         (currentPath.includes('/index.html') && href === '/') ||
         (currentPath.includes('/about') && href === '/about.html') ||
@@ -102,17 +99,21 @@ navLinks.forEach(link => {
 
 // Modal Toggle
 const modal = document.getElementById("authModal");
-const openBtn = document.getElementById("openModalBtn");
+const modalStyle = document.querySelectorAll(".modal-content")
+const openBtn = document.querySelectorAll(".openModalBtn");
 const closeBtn = document.getElementById("closeModalBtn");
 
 const modal2 = document.getElementById("authModal2");
-const openBtn2 = document.getElementById("openModalBtn2");
+const openBtn2 = document.querySelectorAll(".openModalBtn2");
 const closeBtn2 = document.getElementById("closeModalBtn2");
 
 // Open modal
-openBtn.addEventListener("click", () => {
+openBtn.forEach(item => item.addEventListener("click", () => {
     modal.style.display = "flex";
-});
+    if (window.innerWidth <= 768) {
+        closeMobileMenu()
+    }
+}));
 
 // Close modal by clicking X
 closeBtn.addEventListener("click", () => {
@@ -128,9 +129,12 @@ window.addEventListener("click", (e) => {
 
 
 // Open modal
-openBtn2.addEventListener("click", () => {
+openBtn2.forEach(item => item.addEventListener("click", () => {
     modal2.style.display = "flex";
-});
+    if (window.innerWidth <= 768) {
+        closeMobileMenu()
+    }
+}));
 
 // Close modal by clicking X
 closeBtn2.addEventListener("click", () => {
@@ -153,7 +157,7 @@ var swiper = new Swiper(".myPortfolioSwiper", {
     loop: true,
     centeredSlides: true,
     autoplay: {
-        delay: 4000,
+        delay: 5000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true
     },
@@ -207,7 +211,7 @@ var swiper = new Swiper(".myPortfolioSwiper", {
         // Ultra wide (1440px and up)
         1440: {
             slidesPerView: 5,
-            spaceBetween: 40
+            spaceBetween: -10
         }
     }
 });

@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Layout</title>
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                // Add class to html element so it's available immediately
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
     <script defer src="resources/assets/swiper/package/swiper-bundle.min.js"></script>
     <script defer src="resources/assets/aos/dist/aos.js"></script>
     <script defer src="resources/js/main.js"></script>
@@ -76,8 +85,8 @@
                 </button>
 
                 <!-- Sign In / Sign Up Buttons -->
-                <a href="#" id="openModalBtn" class="btn-signin">Sign In</a>
-                <a href="#" id="openModalBtn2" class="btn-signup">Sign Up</a>
+                <a href="#" class="openModalBtn btn-signin">Sign In</a>
+                <a href="#" class="openModalBtn2 btn-signup">Sign Up</a>
 
                 <!-- Mobile Menu Toggle -->
                 <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
@@ -122,8 +131,8 @@
             <a href="/contact.html" class="mobile-nav-link">Contact</a>
 
             <div class="mobile-auth-buttons">
-                <a href="#" class="btn-signin">Sign In</a>
-                <a href="#" class="btn-signup">Sign Up</a>
+                <a href="#" class="openModalBtn btn-signin">Sign In</a>
+                <a href="#" class="openModalBtn2 btn-signup">Sign Up</a>
             </div>
         </nav>
     </div>
@@ -343,9 +352,9 @@
                     </div>
 
                     <div class="progress-content-col" data-aos="fade-left">
-                        <div class="progress-tag">
-                            <span class="tag-circle"></span>
-                            <span class="tag-text">build everything</span>
+                        <div class="status-badge">
+                            <span class="status-dot"></span>
+                            <span class="status-text">build everything</span>
                         </div>
 
                         <h2 class="progress-title">Build amazing websites and landing pages with ease</h2>

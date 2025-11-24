@@ -42,6 +42,7 @@
 }
 
 /* Dark Mode Variables */
+
 body.dark-mode {
   --bg-primary: #000f30;
   --bg-secondary: #081738;
@@ -49,9 +50,16 @@ body.dark-mode {
   --text-secondary: #cbd5e1;
   --text-tertiary: #9ca3af;
   --border-color: #224767;
-  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow: #68758d26;
   --card-bg: #081738;
   --header-bg: transparent;
+}
+html.dark-mode,
+html.dark-mode body,
+html.dark-mode header,
+html.dark-mode header.sticky {
+  background-color: #000f30 !important;
+  color: #ffffff;
 }
 
 /* ===================================
@@ -117,7 +125,7 @@ header {
 
 header.sticky {
   background-color: var(--bg-primary);
-  box-shadow: 0 4px 6px var(--shadow);
+  box-shadow: 0 6px 10px var(--shadow);
 }
 
 .header-container {
@@ -533,7 +541,6 @@ main {
 
 .contact-section {
   display: flex;
-  flex-direction: column;
   gap: var(--spacing-sm);
   margin-top: var(--spacing-xl);
 }
@@ -541,6 +548,7 @@ main {
 .profile-images {
   display: flex;
   align-items: center;
+  margin-inline: var(--spacing-sm);
 }
 
 .profile-img {
@@ -591,7 +599,7 @@ main {
    =================================== */
 .counter-section {
   padding: 4rem var(--spacing-sm);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
   width: 100%;
   overflow: hidden;
 }
@@ -650,7 +658,7 @@ main {
    =================================== */
 .progress-section-wrapper {
   padding: 5rem var(--spacing-sm);
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   width: 100%;
   overflow: hidden;
 }
@@ -751,7 +759,7 @@ main {
    Services Section
    =================================== */
 .services-section {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   padding: 5rem var(--spacing-sm);
   width: 100%;
   overflow: hidden;
@@ -808,12 +816,12 @@ main {
 
 .service-card {
   background: var(--card-bg);
-  padding: 3rem var(--spacing-lg);
+  padding: 6rem var(--spacing-lg);
   text-align: center;
   border-radius: 10px;
   max-width: 100%;
   width: 100%;
-  box-shadow: 0px 8px 30px var(--shadow);
+  box-shadow: 0px 0px 4px var(--shadow);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -822,13 +830,17 @@ main {
 
 @media (max-width: 700px) {
   .service-card {
-    padding: 2rem 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+  .service-icon {
+    width: 30px;
+    height: 30px;
   }
 }
 
 .service-icon {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .service-title {
@@ -861,14 +873,14 @@ main {
    =================================== */
 .portfolio-section {
   padding: 5rem var(--spacing-sm);
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   width: 100%;
   overflow: hidden;
 }
 
 @media (max-width: 700px) {
   .portfolio-section {
-    padding: 3rem 1rem;
+    padding: 3rem 0.5rem;
   }
 }
 
@@ -897,7 +909,7 @@ main {
 }
 
 .portfolio-slider-container {
-  max-width: 100%;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 var(--spacing-sm);
   overflow: hidden;
@@ -906,6 +918,10 @@ main {
 @media (max-width: 700px) {
   .portfolio-slider-container {
     padding: 0;
+  }
+
+  .portfolio-img-wrap {
+    max-width: 25rem !important;
   }
 }
 
@@ -953,7 +969,7 @@ main {
    =================================== */
 .testimonial-section {
   padding: 5rem var(--spacing-sm);
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   width: 100%;
   overflow: hidden;
 }
@@ -997,7 +1013,7 @@ main {
 .author-name {
   font-size: var(--font-size-xl);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--primary-blue);
 }
 
 .author-title {
@@ -1011,7 +1027,7 @@ main {
    =================================== */
 .blog-section {
   padding: 5rem var(--spacing-sm);
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   width: 100%;
   overflow: hidden;
 }
@@ -1120,14 +1136,13 @@ main {
    Contact Section
    =================================== */
 .contact-section {
-  padding: 5rem var(--spacing-sm);
   width: 100%;
   overflow: hidden;
 }
 
 @media (max-width: 700px) {
   .contact-section {
-    padding: 3rem 1rem;
+    padding: 0 1rem;
   }
 }
 
@@ -1214,6 +1229,7 @@ main {
   background: var(--card-bg);
   border-radius: 10px;
   padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
   position: relative;
   z-index: 5;
   width: 100%;
@@ -1259,7 +1275,7 @@ main {
 
 .row {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-sm);
 }
 
@@ -1386,7 +1402,11 @@ footer {
   align-items: center;
   gap: 0.25rem;
 }
-
+@media screen and (max-width: 700px) {
+  .footer-contact {
+    flex-direction: row;
+  }
+}
 .footer-contact p {
   font-size: var(--font-size-base);
   font-weight: bold;
@@ -1461,19 +1481,6 @@ footer {
 }
 
 @media (max-width: 700px) {
-  .newsletter-form {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .newsletter-form input {
-    border-radius: 0.5rem;
-  }
-
-  .newsletter-form button {
-    border-radius: 0.5rem;
-    width: 100%;
-  }
 }
 
 .newsletter-form input {
@@ -1727,7 +1734,7 @@ footer {
   }
 
   .cta-button {
-    width: 100%;
+    width: 50%;
     text-align: center;
   }
 
@@ -1769,7 +1776,6 @@ footer {
     padding: 1.5rem 0;
   }
 }
-
 /* Small tablets and up */
 @media (min-width: 640px) {
   .contact-section {
@@ -1791,8 +1797,8 @@ footer {
   }
 
   .footer-support {
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     border-bottom: none;
   }
 
@@ -1813,14 +1819,6 @@ footer {
   }
 
   .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-info {
     grid-template-columns: repeat(2, 1fr);
   }
 

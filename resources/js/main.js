@@ -205,11 +205,11 @@ var swiper = new Swiper(".myPortfolioSwiper", {
         },
         // Extra large desktop (1320px and up)
         1320: {
-            slidesPerView: 4.5,
+            slidesPerView: 4,
             spaceBetween: 20
         },
         // Ultra wide (1440px and up)
-        1440: {
+        1540: {
             slidesPerView: 5,
             spaceBetween: 30
         }

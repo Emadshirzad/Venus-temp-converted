@@ -195,7 +195,7 @@ var swiper = new Swiper(".myPortfolioSwiper", {
         },
         // Desktop (1024px and up)
         1024: {
-            slidesPerView: 3.5,
+            slidesPerView: 3,
             spaceBetween: 30
         },
         // Large desktop (1200px and up)
